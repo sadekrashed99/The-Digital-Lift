@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { AlertTriangle } from "lucide-react";
+import React from "react";
 
 export default function PainAgitation() {
   const scrollToAudit = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -77,7 +78,7 @@ export default function PainAgitation() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 + (i * 0.1) }}
-              className="bg-[#1A1A1A] rounded-[12px] p-[28px] border border-[#333] border-l-[3px] border-l-[#C9503F]"
+              className="bg-[#1A1A1A] rounded-[12px] p-[28px] border border-[#333333] border-l-[3px] border-l-[#C9503F]"
             >
               <div className="flex flex-col h-full">
                 <div className="mb-4">
@@ -100,7 +101,7 @@ export default function PainAgitation() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="flex flex-col items-center"
         >
-          <p className="font-semibold mb-3" style={{ color: "#FFFFFF", fontSize: "20px" }}>
+          <p className="font-semibold text-center mb-3" style={{ color: "#FFFFFF", fontSize: "20px" }}>
             The good news: this is entirely fixable. In 90 days.
           </p>
           <a

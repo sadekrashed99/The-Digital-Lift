@@ -11,7 +11,7 @@ export default function FaqAccordion() {
   };
 
   return (
-    <section className="py-32 px-6 bg-[#0F0F0F]">
+    <section className="py-32 px-6 bg-light-bg text-charcoal">
       <div className="max-w-[800px] mx-auto">
         
         {/* Section Header */}
@@ -19,7 +19,7 @@ export default function FaqAccordion() {
           <p className="uppercase mb-4" style={{ color: "#00D4B8", letterSpacing: "0.15em", fontSize: "11px" }}>
             FREQUENTLY ASKED
           </p>
-          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
+          <h2 className="text-3xl md:text-5xl font-[900] tracking-tight text-[#0F0F0F] leading-tight">
             Honest answers to the questions we get most.
           </h2>
         </div>
@@ -31,19 +31,19 @@ export default function FaqAccordion() {
             return (
               <div
                 key={index}
-                className="glass rounded-2xl overflow-hidden bg-surface-lvl1/30 hover:bg-surface-lvl1/50 border border-border-hairline transition-all duration-300"
+                className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm transition-all duration-300"
               >
                 <button
                   onClick={() => toggleFaq(index)}
-                  className="w-full p-6 md:p-8 text-left flex justify-between items-center transition-colors focus:outline-none"
+                  className="w-full p-6 md:p-8 text-left flex justify-between items-center transition-colors focus:outline-none hover:bg-gray-50"
                   aria-expanded={isOpen}
                 >
-                  <span className="font-bold text-base md:text-lg tracking-tight text-white group-hover:text-primary transition-colors">
+                  <span className="font-bold text-base md:text-lg tracking-tight text-[#0F0F0F] transition-colors">
                     {item.question}
                   </span>
                   <ChevronDown
                     className={`w-5 h-5 transition-transform duration-300 flex-shrink-0 ${
-                      isOpen ? "transform rotate-180 text-primary" : "text-white/50"
+                      isOpen ? "transform rotate-180 text-primary" : "text-gray-400"
                     }`}
                   />
                 </button>
@@ -56,7 +56,7 @@ export default function FaqAccordion() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.25, ease: "easeInOut" }}
                     >
-                      <div className="px-6 md:px-8 pb-6 md:pb-8 text-on-surface-variant text-sm md:text-base leading-relaxed border-t border-border-hairline/20 pt-4">
+                      <div className="px-6 md:px-8 pb-6 md:pb-8 text-[#6B6B6B] text-sm md:text-base leading-relaxed border-t border-gray-100 pt-4">
                         {item.answer}
                       </div>
                     </motion.div>
