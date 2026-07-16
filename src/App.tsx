@@ -1,10 +1,13 @@
 import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import PainAgitation from "./components/PainAgitation";
+import DigitalScoreAudit from "./components/DigitalScoreAudit";
 import Methodology from "./components/Methodology";
 import Deliverables from "./components/Deliverables";
 import TargetAudience from "./components/TargetAudience";
 import Comparison from "./components/Comparison";
+import PricingCalculator from "./components/PricingCalculator";
 import FaqAccordion from "./components/FaqAccordion";
 import QuizPopup from "./components/QuizPopup";
 import { Linkedin, Twitter } from "lucide-react";
@@ -25,6 +28,12 @@ export default function App() {
         {/* Hero Section */}
         <Hero onOpenQuiz={() => setIsQuizOpen(true)} />
 
+        {/* Pain Agitation */}
+        <PainAgitation />
+
+        {/* Digital Score Audit */}
+        <DigitalScoreAudit onOpenQuiz={() => setIsQuizOpen(true)} />
+
         {/* Methodology (The 90-Day System) */}
         <Methodology />
 
@@ -36,6 +45,9 @@ export default function App() {
 
         {/* Comparison (Why we're different) */}
         <Comparison />
+
+        {/* Pricing Calculator */}
+        <PricingCalculator onOpenQuiz={() => setIsQuizOpen(true)} />
 
         {/* FAQ Accordion (Questions? We have answers) */}
         <FaqAccordion />
