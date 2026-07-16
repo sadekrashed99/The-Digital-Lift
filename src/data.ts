@@ -3,118 +3,141 @@ import { MethodologyStep, DeliverableItem, ComparisonRow, FaqItem } from "./type
 export const METHODOLOGY_STEPS: MethodologyStep[] = [
   {
     number: "01",
-    title: "Discovery",
-    description: "Deep-dive audit of your current tech stack and ICP definition.",
+    title: "Foundation",
+    description: "We research your market, map your ideal client profile, and build your custom Optireach Pipeline Blueprint. You don't guess — we verify.",
     iconName: "Search",
   },
   {
     number: "02",
-    title: "Architecture",
-    description: "Mapping the technical foundation and multi-channel user journeys.",
+    title: "Pipeline Build",
+    description: "Your lead capture system goes live. Traffic flows in. Enquiries are captured and qualified automatically — no manual sorting, no chasing.",
     iconName: "Milestone",
   },
   {
     number: "03",
-    title: "Build",
-    description: "High-performance deployment using Next.js and headless logic.",
+    title: "Conversion Engine",
+    description: "Your follow-up sequences, booking flow, and qualification logic are activated. Booked appointments land in your calendar without you lifting a finger.",
     iconName: "Code2",
   },
   {
     number: "04",
-    title: "Scale",
-    description: "Continuous optimization of the automated acquisition funnel.",
+    title: "Scale & Automate",
+    description: "We optimise, tighten, and hand you the keys. Your system is documented, tested, and running. You focus on delivering work — not finding it.",
     iconName: "Rocket",
   },
 ];
 
 export const DELIVERABLES: DeliverableItem[] = [
   {
-    title: "Conversion Platform",
-    description: "A custom-engineered website optimized for speed and high-intent user conversion.",
+    title: "Your Optireach Pipeline Blueprint",
+    description: "Custom-researched for your vertical and market. Covers your ICP, lead sources, positioning angle, funnel structure, and first-90-day roadmap. Delivered within 24 hours of your quiz.",
     iconName: "Layers",
   },
   {
-    title: "CRM Integration",
-    description: "Seamless automation between your site and sales tools for zero lead leakage.",
+    title: "Personalised Loom Walkthrough",
+    description: "A ~5-minute video walking through exactly what we found in your market and how your blueprint is structured. Not a template. Made for you.",
     iconName: "Cpu",
   },
   {
-    title: "Analytics Dashboard",
-    description: "Live data visualization of your pipeline health and traffic sources.",
+    title: "Lead Capture System (Built, Not Templated)",
+    description: "Landing pages, forms, and capture flows built to convert in your specific niche. Designed for your best-fit client, not the average browser.",
     iconName: "BarChart3",
   },
   {
-    title: "Lead Sourcing",
-    description: "Automated outbound systems that identify and engage your ideal clients.",
+    title: "Automated Qualification & Follow-Up",
+    description: "Your enquiries are filtered, scored, and followed up automatically. Only qualified prospects reach you. No more chasing tyre-kickers.",
     iconName: "Send",
   },
   {
-    title: "Content Strategy",
-    description: "Data-driven content playbooks designed to establish authority in your niche.",
+    title: "Booked-Appointment Engine",
+    description: "Calendar integration, booking logic, and confirmation sequences — so appointments land without back-and-forth. You show up. They're already sold.",
     iconName: "PenTool",
   },
   {
-    title: "Ongoing Support",
-    description: "Monthly technical maintenance and funnel optimization to maintain peak ROI.",
+    title: "90-Day Sprint Delivery + 6 White-Glove Check-ins",
+    description: "12 sprints × 7 days. Structured delivery with human accountability at every major milestone. You always know exactly where you're at.",
     iconName: "ShieldCheck",
   },
 ];
 
 export const COMPARISON_ROWS: ComparisonRow[] = [
   {
-    feature: "Focus",
-    agency: "Design & Branding",
-    digitalLift: "Revenue & Pipelines",
+    feature: "Research",
+    digitalLift: "✓ Your market, your ICP, verified",
+    agency: "Generic strategy deck",
+    diy: "You figure it out",
   },
   {
-    feature: "Lead Generation",
-    agency: "\"Hope\" and Luck",
-    digitalLift: "Automated Systems",
-  },
-  {
-    feature: "Tech Stack",
-    agency: "WordPress / Drag & Drop",
-    digitalLift: "Custom Headless Engine",
+    feature: "Build",
+    digitalLift: "✓ Done-for-you, sprint-delivered",
+    agency: "Retainer, no deadline",
+    diy: "YouTube tutorials",
   },
   {
     feature: "Timeline",
-    agency: "Ongoing / Unknown",
-    digitalLift: "Strict 90-Day Build",
+    digitalLift: "✓ 90 days, 12 sprints",
+    agency: "Ongoing, no finish line",
+    diy: "Unknown",
   },
   {
-    feature: "Guarantee",
-    agency: "None",
-    digitalLift: "Predictable Growth",
+    feature: "Automation",
+    digitalLift: "✓ ~75% automated",
+    agency: "Manual reporting",
+    diy: "Zero",
+  },
+  {
+    feature: "Blueprint",
+    digitalLift: "✓ Custom-researched",
+    agency: "Template repurposed",
+    diy: "Template found online",
+  },
+  {
+    feature: "Enquiry quality",
+    digitalLift: "✓ Qualified, filtered",
+    agency: "Raw, unqualified",
+    diy: "Any and all",
+  },
+  {
+    feature: "Handover",
+    digitalLift: "✓ Documented, running",
+    agency: "Dependent on agency",
+    diy: "Dependent on you",
+  },
+  {
+    feature: "Pricing",
+    digitalLift: "✓ One program, clear scope",
+    agency: "Monthly retainer forever",
+    diy: "Just your time — forever",
   },
 ];
 
 export const FAQ_ITEMS: FaqItem[] = [
   {
-    question: "What exactly is an enquiry pipeline?",
-    answer: "It's a multi-stage technical system that identifies your ideal customers, educates them through automated content, and funnels them into booking high-intent discovery calls with your team—without manual prospecting.",
+    question: "How is this different from hiring a marketing agency?",
+    answer: "Agencies run campaigns on your behalf — usually indefinitely, usually on retainer. The Digital Lift builds you a pipeline system you own. By day 90, the system runs. There's no ongoing dependency on us to keep the leads coming.",
   },
   {
-    question: "Why 90 days?",
-    answer: "This timeframe allows us to conduct a full audit, build the technical foundation, and run the first cycle of optimization to ensure the system is yielding real data and leads.",
+    question: "Do I need to be tech-savvy?",
+    answer: "No. The entire pipeline is built and managed for you across the 90 days. At the 6 white-glove milestones, we walk you through exactly what's happening and what's next. Your job is to show up and deliver the work — not manage the technology.",
   },
   {
-    question: "Do you provide content writing?",
-    answer: "Yes, we provide high-level strategy and technical copywriting that converts complex solutions into compelling value propositions.",
+    question: "What if my industry isn't listed?",
+    answer: "We've built blueprints across 35 niches. If your vertical isn't in our standard library, we custom-research your market from scratch using the same Optireach methodology. The quiz captures this with a free-text field.",
   },
   {
-    question: "What tech stack do you use?",
-    answer: "We primarily use Next.js, Tailwind CSS, and headless CMS systems like Sanity or Contentful for maximum performance and scalability.",
+    question: "What does it cost?",
+    answer: "Pricing is scoped after your blueprint is built — so we can give you a number that reflects your actual market and build complexity, not a generic package price. Start with the quiz and we'll walk you through it.",
   },
   {
-    question: "Is this for e-commerce?",
-    answer: "No, we specialize exclusively in B2B service providers and SaaS companies looking for high-value client enquiries.",
+    question: "How quickly will I see results?",
+    answer: "Your pipeline goes live in Phase 2 — around weeks 4–6. You'll typically see your first enquiries flowing through by week 8. By day 90, you have a fully operational pipeline. This is a 90-day build — not a 90-minute ad campaign.",
   },
   {
-    question: "Do you work with startups?",
-    answer: "Yes, provided you have a proven product-market fit and a clear understanding of your client's lifetime value.",
+    question: "What do the 6 white-glove moments involve?",
+    answer: "At 6 key sprint milestones — Blueprint Reveal, System Launch, First Enquiry Review, Conversion Audit, Automation Check, and Handover — you get direct time with us to review, refine, and confirm. Everything else runs automatically without needing your time.",
   },
   {
-    question: "How much involvement do you need from me?",
-    answer: "Heavily in the first 2 weeks during Discovery. After that, we handle the engineering, and you simply review progress.",
+    question: "Is this only for trades?",
+    answer: "The Optireach Pipeline System was designed for trade and local service businesses first — but the same methodology applies to remote professionals, migration agents, mortgage brokers, and education/coaching businesses. The quiz routes you to the right blueprint for your market.",
   },
 ];

@@ -13,8 +13,9 @@ export interface DeliverableItem {
 
 export interface ComparisonRow {
   feature: string;
-  agency: string;
   digitalLift: string;
+  agency: string;
+  diy: string;
 }
 
 export interface FaqItem {
@@ -23,9 +24,14 @@ export interface FaqItem {
 }
 
 export interface QuizAnswers {
-  goal: string;
-  industry: string;
-  revenue: string;
-  name: string;
+  category: string;
+  service: string;
+  operatingTime: string;
+  enquiriesPerMonth: string;
+  clientSource: string;
+  pipelineChallenge: string;
+  firstName: string;
+  businessName: string;
   email: string;
+  phone: string;
 }

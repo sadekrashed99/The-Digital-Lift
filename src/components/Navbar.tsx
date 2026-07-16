@@ -28,7 +28,7 @@ export default function Navbar({ onOpenQuiz }: NavbarProps) {
         id="mainNav"
         className={`fixed top-0 w-full z-[50] transition-all duration-300 border-b ${
           isScrolled
-            ? "bg-bg-obsidian/80 backdrop-blur-md border-border-hairline"
+            ? "bg-[#0F0F0F] border-[#2A2A2A]"
             : "bg-transparent border-transparent"
         }`}
       >
@@ -36,49 +36,36 @@ export default function Navbar({ onOpenQuiz }: NavbarProps) {
           {/* Logo */}
           <a
             href="#"
-            className="hover:opacity-90 transition-all duration-300 flex items-center"
+            className="hover:opacity-90 transition-opacity flex items-center"
           >
-            <img
-              src={
-                isScrolled || isMobileMenuOpen
-                  ? "https://res.cloudinary.com/dk7z1b7k7/image/upload/v1784163737/leegb5dzskdowk7mn0bs.webp"
-                  : "https://res.cloudinary.com/dk7z1b7k7/image/upload/v1784163713/mbo3vtac54z5a5tlyfgu.webp"
-              }
+            <img 
+              src={isScrolled ? "https://res.cloudinary.com/dk7z1b7k7/image/upload/v1784163737/leegb5dzskdowk7mn0bs.webp" : "https://res.cloudinary.com/dk7z1b7k7/image/upload/v1784163713/mbo3vtac54z5a5tlyfgu.webp"} 
               alt="The Digital Lift"
-              className="h-8 md:h-9 w-auto object-contain transition-all duration-300"
-              referrerPolicy="no-referrer"
+              className="h-7 md:h-8 w-auto object-contain"
             />
           </a>
 
           {/* Desktop Nav Links */}
           <div className="hidden md:flex items-center space-x-10">
             <a
-              href="#platform"
-              className={`text-xs font-bold uppercase tracking-widest transition-colors duration-300 ${
-                isScrolled ? "text-on-surface hover:text-primary" : "text-charcoal hover:text-primary"
+              href="#how-it-works"
+              className={`text-sm font-semibold transition-colors duration-300 ${
+                isScrolled ? "text-gray-300 hover:text-primary" : "text-[#0F0F0F] hover:text-primary"
               }`}
             >
-              Platform
+              How It Works
             </a>
             <a
-              href="#solutions"
-              className={`text-xs font-bold uppercase tracking-widest transition-colors duration-300 ${
-                isScrolled ? "text-on-surface hover:text-primary" : "text-charcoal hover:text-primary"
+              href="#what-you-get"
+              className={`text-sm font-semibold transition-colors duration-300 ${
+                isScrolled ? "text-gray-300 hover:text-primary" : "text-[#0F0F0F] hover:text-primary"
               }`}
             >
-              Solutions
-            </a>
-            <a
-              href="#comparison"
-              className={`text-xs font-bold uppercase tracking-widest transition-colors duration-300 ${
-                isScrolled ? "text-on-surface hover:text-primary" : "text-charcoal hover:text-primary"
-              }`}
-            >
-              Results
+              What You Get
             </a>
             <button
               onClick={onOpenQuiz}
-              className="bg-primary text-bg-obsidian px-6 py-2.5 rounded-md text-xs font-bold uppercase tracking-wider hover:shadow-[0_0_20px_rgba(0,212,184,0.4)] transition-all duration-300 active:scale-95"
+              className="bg-primary text-[#0F0F0F] px-[20px] py-[10px] rounded-[6px] text-[14px] font-bold hover:opacity-90 transition-opacity active:scale-95"
             >
               Build My Pipeline
             </button>
@@ -89,9 +76,7 @@ export default function Navbar({ onOpenQuiz }: NavbarProps) {
             className={`md:hidden focus:outline-none transition-colors duration-300 ${
               isMobileMenuOpen
                 ? "text-primary"
-                : isScrolled
-                ? "text-white"
-                : "text-charcoal"
+                : isScrolled ? "text-white" : "text-[#0F0F0F]"
             }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle Menu"
@@ -113,35 +98,28 @@ export default function Navbar({ onOpenQuiz }: NavbarProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-x-0 top-20 bg-bg-obsidian/95 border-b border-border-hairline backdrop-blur-lg z-40 flex flex-col p-6 space-y-6 md:hidden"
+            className="fixed inset-x-0 top-20 bg-[#0F0F0F] border-b border-[#2A2A2A] z-40 flex flex-col p-6 space-y-6 md:hidden"
           >
             <a
-              href="#platform"
+              href="#how-it-works"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-sm font-bold uppercase tracking-widest text-on-surface hover:text-primary transition-colors py-2"
+              className="text-base font-semibold text-gray-300 hover:text-primary transition-colors py-2"
             >
-              Platform
+              How It Works
             </a>
             <a
-              href="#solutions"
+              href="#what-you-get"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-sm font-bold uppercase tracking-widest text-on-surface hover:text-primary transition-colors py-2"
+              className="text-base font-semibold text-gray-300 hover:text-primary transition-colors py-2"
             >
-              Solutions
-            </a>
-            <a
-              href="#comparison"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="text-sm font-bold uppercase tracking-widest text-on-surface hover:text-primary transition-colors py-2"
-            >
-              Results
+              What You Get
             </a>
             <button
               onClick={() => {
                 setIsMobileMenuOpen(false);
                 onOpenQuiz();
               }}
-              className="bg-primary text-bg-obsidian w-full py-4 rounded-md text-xs font-bold uppercase tracking-widest hover:shadow-[0_0_20px_rgba(0,212,184,0.4)] transition-all duration-300"
+              className="bg-primary text-[#0F0F0F] w-full py-[10px] rounded-[6px] text-[14px] font-bold hover:opacity-90 transition-opacity"
             >
               Build My Pipeline
             </button>

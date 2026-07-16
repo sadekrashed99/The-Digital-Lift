@@ -4,23 +4,23 @@ import { motion, AnimatePresence } from "motion/react";
 import { FAQ_ITEMS } from "../data";
 
 export default function FaqAccordion() {
-  const [openIndex, setOpenIndex] = useState<number | null>(4); // FAQ 4 ("Is this for e-commerce?") open by default
+  const [openIndex, setOpenIndex] = useState<number | null>(0); // First item open by default
 
   const toggleFaq = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section className="py-32 px-6 bg-bg-obsidian">
+    <section className="py-32 px-6 bg-[#0F0F0F]">
       <div className="max-w-[800px] mx-auto">
         
         {/* Section Header */}
-        <div className="text-center mb-20">
-          <p className="text-primary font-semibold text-xs tracking-[0.2em] uppercase mb-4">
-            FAQ
+        <div className="text-center mb-16">
+          <p className="uppercase mb-4" style={{ color: "#00D4B8", letterSpacing: "0.15em", fontSize: "11px" }}>
+            FREQUENTLY ASKED
           </p>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
-            Questions? We have answers.
+            Honest answers to the questions we get most.
           </h2>
         </div>
 

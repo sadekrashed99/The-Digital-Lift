@@ -41,119 +41,66 @@ export default function App() {
         <FaqAccordion />
 
         {/* Footer CTA Section */}
-        <section className="py-48 px-6 bg-bg-obsidian relative overflow-hidden text-center">
-          {/* Glowing element in background */}
-          <div className="absolute inset-0 bg-primary/10 blur-[120px] rounded-full scale-50 opacity-40 pointer-events-none" />
-          
-          <div className="relative z-10 max-w-[1000px] mx-auto">
-            <h2 className="text-4xl md:text-6xl font-extrabold mb-12 tracking-tighter text-white leading-tight">
-              Ready to systemize your growth?
+        <section className="py-32 px-6 bg-[#111111] relative overflow-hidden text-center flex flex-col items-center">
+          <div className="relative z-10 max-w-[800px] mx-auto flex flex-col items-center">
+            <p className="uppercase mb-6" style={{ color: "#00D4B8", letterSpacing: "0.15em", fontSize: "11px" }}>
+              READY TO STOP CHASING WORK?
+            </p>
+            <h2 className="mb-6 font-bold" style={{ color: "#FFFFFF", fontSize: "44px", lineHeight: "1.2" }}>
+              Get your custom pipeline blueprint — free.
             </h2>
+            <p className="mb-10 max-w-[560px] mx-auto" style={{ color: "#6B6B6B", fontSize: "17px", lineHeight: "1.6" }}>
+              Answer 4 questions about your business. We'll research your market, build your Optireach Pipeline Blueprint, and send you a personalised Loom walkthrough within 24 hours.
+            </p>
             <button
               onClick={() => setIsQuizOpen(true)}
-              className="bg-primary text-bg-obsidian px-12 py-5 rounded-xl text-sm font-bold uppercase tracking-[0.2em] hover:scale-[1.02] active:scale-95 transition-all duration-300 teal-glow shadow-2xl"
+              className="font-bold hover:shadow-[0_0_35px_rgba(0,212,184,0.4)] transition-all duration-300 transform hover:scale-[1.02] active:scale-95 mb-4"
+              style={{ backgroundColor: "#00D4B8", color: "#0F0F0F", fontSize: "18px", borderRadius: "8px", padding: "16px 36px" }}
             >
-              Start Your 90-Day Build
+              Build My Pipeline →
             </button>
+            <p style={{ color: "#6B6B6B", fontSize: "13px" }}>
+              No obligation. No sales call unless you want one. Free within 24 hours.
+            </p>
           </div>
         </section>
       </main>
 
       {/* Footer Section */}
-      <footer className="bg-bg-obsidian border-t border-border-hairline py-20 px-6 relative z-10">
-        <div className="max-w-[1200px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
-            {/* Logo and Pitch */}
-            <div className="md:col-span-2">
-              <div className="mb-6 flex items-center">
-                <img
-                  src="https://res.cloudinary.com/dk7z1b7k7/image/upload/v1784163737/leegb5dzskdowk7mn0bs.webp"
-                  alt="The Digital Lift"
-                  className="h-8 md:h-9 w-auto object-contain"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <p className="text-on-surface-variant text-sm leading-relaxed max-w-sm">
-                Engineering excellence for the modern web. We build the systems that build your business.
-              </p>
-            </div>
-
-            {/* Navigation links */}
-            <div>
-              <h4 className="text-white font-semibold text-xs tracking-[0.2em] uppercase mb-6">
-                Navigation
-              </h4>
-              <ul className="space-y-4 text-sm font-semibold text-gray-400">
-                <li>
-                  <a href="#platform" className="hover:text-primary transition-colors">
-                    Platform
-                  </a>
-                </li>
-                <li>
-                  <a href="#solutions" className="hover:text-primary transition-colors">
-                    Solutions
-                  </a>
-                </li>
-                <li>
-                  <a href="#comparison" className="hover:text-primary transition-colors">
-                    Results
-                  </a>
-                </li>
-                <li>
-                  <a href="#comparison" className="hover:text-primary transition-colors">
-                    Pricing
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Legal Links */}
-            <div>
-              <h4 className="text-white font-semibold text-xs tracking-[0.2em] uppercase mb-6">
-                Legal
-              </h4>
-              <ul className="space-y-4 text-sm font-semibold text-gray-400">
-                <li>
-                  <a href="#" className="hover:text-primary transition-colors">
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-primary transition-colors">
-                    Terms of Service
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-primary transition-colors">
-                    Cookie Policy
-                  </a>
-                </li>
-              </ul>
-            </div>
+      <footer className="bg-[#0A0A0A] py-16 px-6 relative z-10">
+        <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-12 text-center md:text-left">
+          
+          {/* Left */}
+          <div className="flex flex-col gap-2 md:items-start items-center">
+            <img 
+              src="https://res.cloudinary.com/dk7z1b7k7/image/upload/v1784163737/leegb5dzskdowk7mn0bs.webp" 
+              alt="The Digital Lift"
+              className="h-8 w-auto object-contain mb-2"
+            />
+            <div style={{ color: "#6B6B6B", fontSize: "13px" }}>An Optireach Systems program.</div>
+            <div style={{ color: "#6B6B6B", fontSize: "12px" }}>© 2026 Optireach Systems. All rights reserved.</div>
+          </div>
+          
+          {/* Centre - links */}
+          <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center">
+            <a href="#how-it-works" className="transition-colors duration-300" style={{ color: "#6B6B6B", textDecoration: "none" }} onMouseOver={(e) => e.currentTarget.style.color = "#00D4B8"} onMouseOut={(e) => e.currentTarget.style.color = "#6B6B6B"}>
+              How It Works
+            </a>
+            <a href="#what-you-get" className="transition-colors duration-300" style={{ color: "#6B6B6B", textDecoration: "none" }} onMouseOver={(e) => e.currentTarget.style.color = "#00D4B8"} onMouseOut={(e) => e.currentTarget.style.color = "#6B6B6B"}>
+              What You Get
+            </a>
+            <button onClick={() => setIsQuizOpen(true)} className="transition-colors duration-300 focus:outline-none" style={{ color: "#6B6B6B", textDecoration: "none", background: "none", border: "none", cursor: "pointer", padding: 0 }} onMouseOver={(e) => e.currentTarget.style.color = "#00D4B8"} onMouseOut={(e) => e.currentTarget.style.color = "#6B6B6B"}>
+              Build My Pipeline
+            </button>
           </div>
 
-          {/* Copyright and Socials */}
-          <div className="mt-20 pt-8 border-t border-border-hairline/50 flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-xs text-white/30 uppercase tracking-[0.2em] font-bold">
-              © {new Date().getFullYear()} THE DIGITAL LIFT. ALL RIGHTS RESERVED.
-            </p>
-            <div className="flex gap-6 text-white/40">
-              <a
-                href="#"
-                className="hover:text-primary transition-colors p-1"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="hover:text-primary transition-colors p-1"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
-            </div>
+          {/* Right */}
+          <div>
+            <a href="mailto:hello@thedigitallift.com.au" className="transition-colors duration-300" style={{ color: "#6B6B6B", textDecoration: "none" }} onMouseOver={(e) => e.currentTarget.style.color = "#00D4B8"} onMouseOut={(e) => e.currentTarget.style.color = "#6B6B6B"}>
+              Questions? hello@thedigitallift.com.au
+            </a>
           </div>
+
         </div>
       </footer>
 

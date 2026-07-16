@@ -1,68 +1,121 @@
-import { ComponentType } from "react";
-import { Search, Milestone, Code2, Rocket } from "lucide-react";
+import { useRef } from "react";
+import { motion, useScroll } from "motion/react";
 import { METHODOLOGY_STEPS } from "../data";
 
-// Helper to resolve lucide icons dynamically
-const iconMap: Record<string, ComponentType<{ className?: string }>> = {
-  Search: Search,
-  Milestone: Milestone,
-  Code2: Code2,
-  Rocket: Rocket,
-};
-
 export default function Methodology() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start center", "end center"]
+  });
+
   return (
-    <section className="py-32 px-6 bg-bg-obsidian relative overflow-hidden" id="platform">
-      <div className="max-w-[1200px] mx-auto relative z-10">
+    <section className="py-32 px-6 bg-bg-obsidian relative overflow-hidden" id="how-it-works">
+      <div className="max-w-[1000px] mx-auto relative z-10">
         
         {/* Section Header */}
         <div className="text-center mb-24">
-          <p className="text-primary font-semibold text-xs tracking-[0.2em] uppercase mb-4">
-            The Methodology
+          <p className="uppercase mb-4" style={{ color: "#00D4B8", letterSpacing: "0.15em", fontSize: "11px" }}>
+            HOW IT WORKS
           </p>
-          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
-            The 90-Day System
+          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white leading-tight mb-4 max-w-3xl mx-auto">
+            12 sprints. 90 days. One system that works without you in every room.
           </h2>
+          <p style={{ color: "#6B6B6B", fontSize: "18px" }}>
+            Every sprint has a job. Every phase has a purpose. By day 90, your pipeline runs.
+          </p>
         </div>
 
-        {/* Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+        {/* Steps Timeline */}
+        <div ref={containerRef} className="relative w-full mb-16">
+          {/* Central Line */}
+          <div className="absolute left-[20px] md:left-1/2 top-0 bottom-0 w-[2px] bg-[#2A2A2A] transform -translate-x-1/2" />
           
-          {/* Dashed Connecting Line for Desktop */}
-          <div className="hidden md:block absolute top-[120px] left-0 w-full h-[1px] border-t border-dashed border-primary/20 z-0" />
+          {/* Animated Teal Line */}
+          <motion.div 
+            className="absolute left-[20px] md:left-1/2 top-0 bottom-0 w-[2px] bg-[#00D4B8] transform -translate-x-1/2 origin-top"
+            style={{ scaleY: scrollYProgress }}
+          />
 
-          {METHODOLOGY_STEPS.map((step) => {
-            const IconComponent = iconMap[step.iconName] || Search;
+          {METHODOLOGY_STEPS.map((step, index) => {
+            const startSprint = index * 3 + 1;
+            const endSprint = startSprint + 2;
+            const subLabel = `Sprints ${startSprint}–${endSprint}`;
+            const isEven = index % 2 === 0;
+            
             return (
-              <div
+              <motion.div
                 key={step.number}
-                className="group relative glass p-8 rounded-3xl z-10 overflow-hidden bg-surface-lvl1/40 hover:bg-surface-lvl2/60 border border-border-hairline hover:border-primary/45 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5),_0_0_20px_rgba(0,212,184,0.05)] cursor-pointer"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+                className={`relative flex w-full mb-12 md:mb-24 ${
+                  isEven ? "md:justify-end" : "md:justify-start"
+                }`}
               >
-                {/* Step Number in Background */}
-                <div className="absolute top-6 right-6 text-white font-black text-6xl opacity-10 group-hover:opacity-100 group-hover:text-primary transition-all duration-500 select-none group-hover:scale-105 group-hover:drop-shadow-[0_0_15px_rgba(0,212,184,0.3)]">
-                  {step.number}
-                </div>
+                {/* Center dot (absolute positioned) */}
+                <motion.div 
+                  initial={{ 
+                    boxShadow: "0 0 0px 0px rgba(0,212,184,0)", 
+                    borderColor: "#333",
+                    backgroundColor: "#0F0F0F"
+                  }}
+                  whileInView={{ 
+                    boxShadow: [
+                      "0 0 0px 0px rgba(0,212,184,0)", 
+                      "0 0 0px 12px rgba(0,212,184,0.4)", 
+                      "0 0 0px 0px rgba(0,212,184,0)"
+                    ],
+                    borderColor: "#00D4B8",
+                    backgroundColor: "#00D4B8",
+                    transition: { 
+                      boxShadow: { duration: 1.5, repeat: Infinity, ease: "easeInOut" },
+                      borderColor: { duration: 0 },
+                      backgroundColor: { duration: 0 }
+                    }
+                  }}
+                  viewport={{ once: true, margin: "0px 0px -48% 0px" }}
+                  className="absolute left-[20px] md:left-1/2 top-8 md:top-1/2 w-4 h-4 rounded-full border-[3px] transform -translate-x-1/2 md:-translate-y-1/2 z-10" 
+                />
 
-                <div className="relative z-10 mt-12">
-                  {/* Icon Wrapper */}
-                  <div className="mb-6 text-primary p-3 bg-primary/10 rounded-xl inline-block group-hover:scale-110 transition-transform duration-300">
-                    <IconComponent className="w-7 h-7" />
+                {/* Content Box */}
+                <div className="w-full pl-[56px] md:pl-0 md:w-[45%]">
+                  <div 
+                    style={{ backgroundColor: "#1A1A1A", border: "1px solid #333", borderRadius: "16px", padding: "36px" }}
+                    className={`w-full relative hover:border-[#00D4B8]/40 transition-colors duration-500 text-left ${!isEven ? 'md:text-right' : ''}`}
+                  >
+                    <div style={{ color: "#00D4B8", fontSize: "40px", fontWeight: "900", lineHeight: "1", marginBottom: "16px", opacity: 0.9 }}>
+                      Phase {parseInt(step.number)}
+                    </div>
+                    <h3 className="text-2xl font-bold mb-2 tracking-tight text-white">
+                      {step.title}
+                    </h3>
+                    <p style={{ color: "#00D4B8", fontSize: "13px", letterSpacing: "0.05em", textTransform: "uppercase", fontWeight: "bold", marginBottom: "20px" }}>
+                      {subLabel}
+                    </p>
+                    <p style={{ color: "#9A9A9A", fontSize: "16px", lineHeight: "1.7" }}>
+                      {step.description}
+                    </p>
                   </div>
-
-                  {/* Title */}
-                  <h3 className="text-xl font-bold mb-3 tracking-tight text-white group-hover:text-primary transition-colors">
-                    {step.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-on-surface-variant text-sm leading-relaxed">
-                    {step.description}
-                  </p>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
+        
+        {/* Footnote */}
+        <motion.p 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          className="text-center italic" 
+          style={{ color: "#6B6B6B", fontSize: "14px" }}
+        >
+          ~75% automated. ~25% human — at the 6 moments that matter most.
+        </motion.p>
       </div>
     </section>
   );
