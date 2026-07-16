@@ -1,0 +1,6 @@
+{
+  "name": "The Digital Lift",
+  "description": "High-performance client acquisition engine and predictable enquiry pipeline builder for technical founders.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
